@@ -28,10 +28,6 @@ php artisan config:clear
 php artisan config:cache
 ```
 
-Megjegyzés: Ha a projektben korábban szerepeltek Sanctum-specifikus táblák/migrációk (pl. `personal_access_tokens`), ezek nem jelentenek problémát — a jwt-auth stateless megoldás, nem használja ezeket a táblákat. Ha a projektben a HasApiTokens trait-et használod más célra, döntsd el, megtartod-e vagy eltávolítod.
-
-Fájlmódosítások — példák (másold be a tényleges projektbe)
-
 1) app/Models/User.php
 - Implementáld a JWTSubject interfészt, add meg a két kötelező metódust, és hagyd vagy távolítsd el a HasApiTokens trait-et (ha nem használod Sanctum-ot tovább, el is távolíthatod).
 
@@ -346,6 +342,7 @@ Ellenőrzés / manuális tesztelés
 3. Regisztrálj egy usert: POST /api/register
 4. Jelentkezz be: POST /api/login → kapott tokennel próbáld meg a GET /api/users/me-t
 5. Próbáld meg a /api/logout-ot a tokennel — azután a tokennel való hozzáférésnek 401-et kell adnia.
+
 
 
 
