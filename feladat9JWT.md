@@ -8,14 +8,6 @@ Base URL
 
 Áttekintés
 - A projekt jelenleg Laravel Sanctum + personal access token logikát használja (User modellban HasApiTokens, `auth:sanctum` middleware a routes/api.php-ban).
-- Átállításkor:
-  - Telepítjük a tymon/jwt-auth csomagot.
-  - Létrehozunk JWT secret-ot (.env -> JWT_SECRET).
-  - Konfiguráljuk a `config/auth.php`-t, hogy legyen `api` guard `jwt` driver-rel.
-  - A `User` modell implementálja a `Tymon\JWTAuth\Contracts\JWTSubject` interfészt.
-  - Az `AuthController` login/logout/me műveleteit átírjuk JWT-re.
-  - A route csoport middleware-ét `auth:sanctum`-ról `auth:api`-ra cseréljük.
-  - Teszteket és Postman gyűjteményt frissítjük (Authorization: Bearer <token>).
 
 Telepítés és alapbeállítások
 1) Csomag telepítése:
@@ -354,6 +346,7 @@ Ellenőrzés / manuális tesztelés
 3. Regisztrálj egy usert: POST /api/register
 4. Jelentkezz be: POST /api/login → kapott tokennel próbáld meg a GET /api/users/me-t
 5. Próbáld meg a /api/logout-ot a tokennel — azután a tokennel való hozzáférésnek 401-et kell adnia.
+
 
 
 
