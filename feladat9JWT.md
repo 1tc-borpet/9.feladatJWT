@@ -1,4 +1,4 @@
-# 9.feladat — API átállítása JWT tokenes autentikációra (tymon/jwt-auth)
+# 9.feladat —  JWT tokenes autentikáció (tymon/jwt-auth)
 
 Ez a dokumentáció leírja, JWT-alapú Bearer tokenes autentikációra átállítani.
 
@@ -342,6 +342,7 @@ Ellenőrzés / manuális tesztelés
 3. Regisztrálj egy usert: POST /api/register
 4. Jelentkezz be: POST /api/login → kapott tokennel próbáld meg a GET /api/users/me-t
 5. Próbáld meg a /api/logout-ot a tokennel — azután a tokennel való hozzáférésnek 401-et kell adnia.
+
 
 
 
